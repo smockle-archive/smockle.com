@@ -16,12 +16,22 @@ server {
 server {
     server_name blog.smockle.$tld;
 
-    ssl on;
-    ssl_certificate /etc/nginx/ssl/blog.smockle.$tld.crt;
-    ssl_certificate_key /etc/nginx/ssl/blog.smockle.$tld.key;
-
     listen *:443 ssl spdy;
     listen [::]:443 ssl spdy;
+    resolver 8.8.8.8 8.8.4.4;
+
+    ssl_certificate /etc/nginx/ssl/blog.smockle.$tld.crt;
+    ssl_certificate_key /etc/nginx/ssl/blog.smockle.$tld.key;
+    ssl_session_cache shared:SSL:2m;
+    ssl_session_timeout 8m;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    ssl_trusted_certificate /etc/nginx/ssl/smockle.$tld.trustchain.crt;
+    add_header Strict-Transport-Security "max-age=31536000";
 
     location / {
       proxy_pass http://blog:2368;
