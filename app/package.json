@@ -1,0 +1,22 @@
+{
+  "name": "smockle-containers-app",
+  "version": "1.0.0",
+  "description": "Frontend node app for smockle.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smockle/smockle-containers.git"
+  },
+  "author": "Clay Miller <clay@smockle.com> (http://www.smockle.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smockle/smockle-containers/issues"
+  },
+  "homepage": "https://github.com/smockle/smockle-containers",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}

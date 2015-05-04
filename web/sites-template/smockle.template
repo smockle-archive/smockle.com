@@ -1,0 +1,57 @@
+#
+# Redirect all www to non-www
+#
+server {
+    server_name www.smockle.$tld;
+
+    listen *:80;
+    listen *:443 ssl spdy;
+    listen [::]:80;
+    listen [::]:443 ssl spdy;
+
+    ssl on;
+    ssl_certificate     /etc/nginx/ssl/www.smockle.$tld.crt;
+    ssl_certificate_key /etc/nginx/ssl/www.smockle.$tld.key;
+
+    return 301 https://smockle.$tld$request_uri;
+}
+
+#
+# Redirect all non-encrypted to encrypted
+#
+server {
+    server_name smockle.$tld;
+
+    listen *:80;
+    listen [::]:80;
+
+    return 301 https://smockle.$tld$request_uri;
+}
+
+#
+# Proxy to app address
+#
+server {
+    server_name smockle.$tld;
+
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/smockle.$tld.crt;
+    ssl_certificate_key /etc/nginx/ssl/smockle.$tld.key;
+
+    listen *:443 ssl spdy;
+    listen [::]:443 ssl spdy;
+
+    location / {
+      proxy_pass http://app:3000;
+
+      proxy_set_header X-Real-IP         $remote_addr;
+      proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+      proxy_set_header Host              $http_host;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_set_header X-NginX-Proxy     true;
+
+      proxy_pass_header X-CSRF-TOKEN;
+      proxy_buffering off;
+      proxy_redirect off;
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "smockle-containers-blog",
+  "version": "1.0.0",
+  "description": "Ghost blog for blog.smockle.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smockle/smockle-containers.git"
+  },
+  "author": "Clay Miller <clay@smockle.com> (http://www.smockle.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smockle/smockle-containers/issues"
+  },
+  "homepage": "https://github.com/smockle/smockle-containers",
+  "dependencies": {
+    "ghost-s3-storage": "^0.2.1"
+  }
+}
