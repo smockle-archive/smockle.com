@@ -18,8 +18,8 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
     ssl_dhparam /etc/nginx/ssl/dhparam.pem;
-    ssl_stapling on;
-    ssl_stapling_verify on;
+    ssl_stapling $offon;
+    ssl_stapling_verify $offon;
     ssl_trusted_certificate /etc/nginx/ssl/smockle.$tld.trustchain.crt;
     add_header Strict-Transport-Security "max-age=31536000";
 
@@ -56,8 +56,8 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
     ssl_dhparam /etc/nginx/ssl/dhparam.pem;
-    ssl_stapling on;
-    ssl_stapling_verify on;
+    ssl_stapling $offon;
+    ssl_stapling_verify $offon;
     ssl_trusted_certificate /etc/nginx/ssl/smockle.$tld.trustchain.crt;
     add_header Strict-Transport-Security "max-age=31536000";
 

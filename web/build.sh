@@ -16,8 +16,29 @@ do
   if [ ! -d "sites-available" ]; then
     mkdir "sites-available"
   fi
-  sed "s/\$tld/local/" "$t" > "sites-available/$o.local"
-  sed "s/\$tld/com/" "$t" > "sites-available/$o.com"
+  if [ ! -d ".tmp" ]; then
+    mkdir ".tmp"
+    MKDIR_TMP=true
+  fi
+  cp "$t" ".tmp/$o.local"
+  cp "$t" ".tmp/$o.com"
+  if (grep -q "\$tld" "$t"); then
+    sed "s/\$tld/local/" ".tmp/$o.local" > ".tmp/$o.local.tmp" && mv ".tmp/$o.local.tmp" ".tmp/$o.local"
+    sed "s/\$tld/com/" ".tmp/$o.com" > ".tmp/$o.com.tmp" && mv ".tmp/$o.com.tmp" ".tmp/$o.com"
+  fi
+  if (grep -q "\$onoff" "$t"); then
+    sed "s/\$onoff/on/" ".tmp/$o.local" > ".tmp/$o.local.tmp" && mv ".tmp/$o.local.tmp" ".tmp/$o.local"
+    sed "s/\$onoff/off/" ".tmp/$o.com" > ".tmp/$o.com.tmp" && mv ".tmp/$o.com.tmp" ".tmp/$o.com"
+  fi
+  if (grep -q "\$offon" "$t"); then
+    sed "s/\$offon/off/" ".tmp/$o.local" > ".tmp/$o.local.tmp" && mv ".tmp/$o.local.tmp" ".tmp/$o.local"
+    sed "s/\$offon/on/" ".tmp/$o.com" > ".tmp/$o.com.tmp" && mv ".tmp/$o.com.tmp" ".tmp/$o.com"
+  fi
+  mv ".tmp/$o.local" "sites-available/$o.local"
+  rm -f ".tmp/$o.local.tmp"
+  mv ".tmp/$o.com" "sites-available/$o.com"
+  rm -f ".tmp/$o.com.tmp"
+  if [[ $MKDIR_TMP ]]; then rm -Rf ".tmp"; fi
 
   # Link available sites
   if [ ! -d "sites-enabled" ]; then
