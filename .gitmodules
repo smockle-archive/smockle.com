@@ -1,0 +1,15 @@
+[submodule "api/app"]
+	path = api/app
+	url = https://github.com/smockle/smockle-api.git
+[submodule "ember/app"]
+	path = ember/app
+	url = https://github.com/smockle/smockle-ember.git
+[submodule "ghost/app"]
+	path = ghost/app
+	url = https://github.com/smockle/smockle-ghost.git
+[submodule "nginx/server"]
+	path = nginx/server
+	url = https://github.com/smockle/smockle-nginx.git
+[submodule "worker/app"]
+	path = worker/app
+	url = https://github.com/smockle/smockle-worker.git

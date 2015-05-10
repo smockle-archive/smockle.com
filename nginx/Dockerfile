@@ -9,12 +9,12 @@ COPY nginx.conf nginx.conf
 
 # Transform and link site configuration templates
 COPY build.sh build.sh
-COPY sites-template .
+COPY server/sites-template .
 RUN chmod +x build.sh; sync; ./build.sh
 
 # Copy site configurations
-COPY sites-available .
-COPY sites-enabled .
+COPY server/sites-available .
+COPY server/sites-enabled .
 
 # Copy certificates
-COPY ssl .
+COPY server/ssl .

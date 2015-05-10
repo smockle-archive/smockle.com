@@ -1,3 +1,3 @@
 # smockle-containers
 
-Testing Docker Compose, Swarm and Machine
+Smockle web properties.
