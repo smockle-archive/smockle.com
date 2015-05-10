@@ -1,24 +1,35 @@
-app:
-  build: app
+ember:
+  build: ember
+api:
+  build: api
   ports:
     - "3000:3000"
-blog:
-  build: blog
+worker:
+  build: worker
+  ports:
+    - "4000:4000"
+mongo:
+  build: mongo
+  ports:
+    - "27017:27017"
+ghost:
+  build: ghost
   ports:
     - "2368:2368"
   links:
-    - "postgres:postgres"
-  env_file: blog/.env
+    - postgres
+  env_file: ghost/.env
 postgres:
   build: postgres
   ports:
     - "5432:5432"
   env_file: postgres/.env
-web:
-  build: web
+nginx:
+  build: nginx
   ports:
     - "80:80"
     - "443:443"
   links:
-    - "app:app"
-    - "blog:blog"
+    - api
+    - ember
+    - ghost

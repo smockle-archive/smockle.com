@@ -1,7 +1,7 @@
 {
-  "name": "smockle-containers-blog",
+  "name": "smockle-ghost",
   "version": "1.0.0",
-  "description": "Ghost blog for blog.smockle.com",
+  "description": "Blog, powered by Ghost",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

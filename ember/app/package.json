@@ -1,0 +1,22 @@
+{
+  "name": "smockle-ember",
+  "version": "1.0.0",
+  "description": "Static site frontend build with Ember.",
+  "scripts": {
+    "start": "ember server",
+    "build": "ember build",
+    "test": "ember test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smockle/smockle-ember.git"
+  },
+  "author": "Clay Miller <clay@smockle.com> (http://www.smockle.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smockle/smockle-ember/issues"
+  },
+  "homepage": "https://github.com/smockle/smockle-ember",
+  "dependencies": {
+  }
+}

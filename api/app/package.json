@@ -1,21 +1,21 @@
 {
-  "name": "smockle-containers-app",
+  "name": "smockle-api",
   "version": "1.0.0",
-  "description": "Frontend node app for smockle.com",
+  "description": "API server backed by a Mongo database.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smockle/smockle-containers.git"
+    "url": "git+https://github.com/smockle/smockle-api.git"
   },
   "author": "Clay Miller <clay@smockle.com> (http://www.smockle.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/smockle/smockle-containers/issues"
+    "url": "https://github.com/smockle/smockle-api/issues"
   },
-  "homepage": "https://github.com/smockle/smockle-containers",
+  "homepage": "https://github.com/smockle/smockle-api",
   "dependencies": {
     "express": "^4.12.3"
   }
