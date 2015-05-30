@@ -1,5 +1,5 @@
-ember:
-  build: ember
+react:
+  build: react
 api:
   build: api
   ports:
@@ -31,5 +31,5 @@ nginx:
     - "443:443"
   links:
     - api
-    - ember
     - ghost
+    - react
