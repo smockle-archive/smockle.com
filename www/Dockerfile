@@ -18,4 +18,4 @@ COPY app .
 RUN ./node_modules/.bin/react build && \
     cp -af dist/* /var/www/static
 
-VOLUME ["/var/www/static"]
+# VOLUME ["/var/www/static"]
