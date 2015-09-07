@@ -1,7 +1,11 @@
+www:
+  build: www
+  ports:
+    - "8080"
 nginx:
   build: nginx
   ports:
     - "80:80"
     - "443:443"
-  links:
+  volumes_from:
     - www
