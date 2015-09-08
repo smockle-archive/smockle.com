@@ -1,7 +1,5 @@
 www:
   build: www
-  ports:
-    - "8080"
 nginx:
   build: nginx
   ports:

@@ -5,7 +5,7 @@ MAINTAINER Clay Miller "clay@smockle.com"
 WORKDIR /etc/nginx
 
 # Copy server configuration
-COPY nginx.conf nginx.conf
+ADD nginx.conf nginx.conf
 
 # Transform and link site configuration templates
 # COPY build.sh build.sh
@@ -13,8 +13,8 @@ COPY nginx.conf nginx.conf
 # RUN chmod +x build.sh; sync; ./build.sh
 
 # Copy site configurations
-COPY server/sites-available ./sites-available
-COPY server/sites-enabled ./sites-enabled
+ADD server/sites-available ./sites-available
+ADD server/sites-enabled ./sites-enabled
 
 # Copy certificates
-COPY server/ssl ./ssl
+ADD server/ssl ./ssl
