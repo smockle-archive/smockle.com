@@ -1,3 +1,8 @@
+blog:
+  build: blog
+  ports:
+    - "2368:2368"
+  env_file: blog/.env
 www:
   build: www
 nginx:
@@ -5,5 +10,7 @@ nginx:
   ports:
     - "80:80"
     - "443:443"
+  links:
+    - blog
   volumes_from:
     - www
