@@ -1,0 +1,3 @@
+# smockle-nginx
+
+Server configuration

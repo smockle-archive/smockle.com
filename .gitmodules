@@ -3,7 +3,7 @@
 	url = https://github.com/smockle/smockle-nginx.git
 [submodule "www/app"]
 	path = www/app
-	url = https://github.com/smockle/smockle.com.git
+	url = https://github.com/smockle/www.smockle.com.git
 [submodule "blog/app"]
 	path = blog/app
-	url = https://github.com/smockle/smockle-ghost.git
+	url = https://github.com/smockle/blog.smockle.com.git
