@@ -4,3 +4,6 @@
 [submodule "www/app"]
 	path = www/app
 	url = https://github.com/smockle/smockle.com.git
+[submodule "blog/app"]
+	path = blog/app
+	url = https://github.com/smockle/smockle-ghost.git
