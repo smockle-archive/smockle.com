@@ -5,6 +5,8 @@ server {
     server_name www.smockle.com;
     listen 443 ssl spdy;
     listen [::]:443 ssl spdy;
+    # resolver 8.8.8.8 8.8.4.4 valid=300s;
+    # resolver_timeout 5s;
 
     ssl_certificate /etc/nginx/ssl/smockle.com.chain.crt;
     ssl_certificate_key /etc/nginx/ssl/smockle.com.key;
@@ -51,7 +53,8 @@ server {
     server_name smockle.com;
     listen 443 ssl spdy;
     listen [::]:443 ssl spdy;
-    resolver 8.8.8.8 8.8.4.4;
+    # resolver 8.8.8.8 8.8.4.4 valid=300s;
+    # resolver_timeout 5s;
 
     ssl_certificate /etc/nginx/ssl/smockle.com.chain.crt;
     ssl_certificate_key /etc/nginx/ssl/smockle.com.key;
