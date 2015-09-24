@@ -31,6 +31,15 @@ server {
     # Strict Transport Security
     add_header Strict-Transport-Security "max-age=31536000";
 
+    # config to allow the browser to render the page inside an frame or iframe
+    add_header X-Frame-Options DENY;
+
+    # disable content-type sniffing in some browsers
+    add_header X-Content-Type-Options nosniff;
+
+    # Re-enable the XSS filter for if it was disabled by the user.
+    add_header X-XSS-Protection "1; mode=block";
+
     expires 1M;
 
     location / {

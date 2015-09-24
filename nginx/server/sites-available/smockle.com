@@ -17,6 +17,19 @@ server {
     # Strict Transport Security
     add_header Strict-Transport-Security "max-age=31536000";
 
+    # config to allow the browser to render the page inside an frame or iframe
+    add_header X-Frame-Options DENY;
+
+    # disable content-type sniffing in some browsers
+    add_header X-Content-Type-Options nosniff;
+
+    # Re-enable the XSS filter for if it was disabled by the user.
+    add_header X-XSS-Protection "1; mode=block";
+
+    # With Content Security Policy (CSP) enabled  you can tell the browser that it
+    # can only download content from the domains you explicitly allow
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; img-src 'self'; style-src 'self'; font-src 'self'; object-src 'none'";
+
     return 301 https://smockle.com$request_uri;
 }
 
@@ -50,6 +63,19 @@ server {
 
     # Strict Transport Security
     add_header Strict-Transport-Security "max-age=31536000";
+
+    # config to allow the browser to render the page inside an frame or iframe
+    add_header X-Frame-Options DENY;
+
+    # disable content-type sniffing in some browsers
+    add_header X-Content-Type-Options nosniff;
+
+    # Re-enable the XSS filter for if it was disabled by the user.
+    add_header X-XSS-Protection "1; mode=block";
+
+    # With Content Security Policy (CSP) enabled  you can tell the browser that it
+    # can only download content from the domains you explicitly allow
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; img-src 'self'; style-src 'self'; font-src 'self'; object-src 'none'";
 
     expires 1M;
 
