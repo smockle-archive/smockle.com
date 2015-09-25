@@ -16,6 +16,9 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/nginx/ssl/smockle.com.root.crt;
 
+    # HTTP Public Key Pinning
+    add_header Public-Key-Pins 'pin-sha256="bHx8nd2uGDqtx5yCju/pZieOirdYR/NfPwsXAxmtHec="; pin-sha256="xGKXju2QkRjkNMkjjkFK+GZ8IPh58uopt8djE8pjrPY="; pin-sha256="/xlbX3P+POOnWu9GTqB/hJaLOsSfg59NMCNvkX2iBRQ="; pin-sha256="8wtFe6mr1NoCTZNEqfyrgPyxzul3R4fJ1q+TN5S05aY="; max-age=5184000';
+
     # Strict Transport Security
     add_header Strict-Transport-Security "max-age=31536000";
 
@@ -63,6 +66,9 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/nginx/ssl/smockle.com.root.crt;
+
+    # HTTP Public Key Pinning
+    add_header Public-Key-Pins 'pin-sha256="bHx8nd2uGDqtx5yCju/pZieOirdYR/NfPwsXAxmtHec="; pin-sha256="xGKXju2QkRjkNMkjjkFK+GZ8IPh58uopt8djE8pjrPY="; pin-sha256="/xlbX3P+POOnWu9GTqB/hJaLOsSfg59NMCNvkX2iBRQ="; pin-sha256="8wtFe6mr1NoCTZNEqfyrgPyxzul3R4fJ1q+TN5S05aY="; max-age=5184000';
 
     # Strict Transport Security
     add_header Strict-Transport-Security "max-age=31536000";

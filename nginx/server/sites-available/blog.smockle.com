@@ -28,6 +28,9 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/nginx/ssl/smockle.com.root.crt;
 
+    # HTTP Public Key Pinning
+    add_header Public-Key-Pins 'pin-sha256="Zy7rIFdgdM0BgwVKiUMnUpTxkKsf/9DTTr2+TeBTsOY="; pin-sha256="l5kN3B4JQi57VN26too5Es7ZlIojhdcOCNq/wURx3SE="; pin-sha256="ZQKWeBNIiWZkzvmZlC82aBf1sZjAAL79xMfgUZykZBo="; pin-sha256="Usgl7Qgo0rS4Se9NSJWBf9qeTeSaLve6VkJR1L0FF8s="; max-age=5184000';
+
     # Strict Transport Security
     add_header Strict-Transport-Security "max-age=31536000";
 
