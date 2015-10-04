@@ -3,8 +3,8 @@
 #
 server {
     server_name www.smockle.com;
-    listen 443 ssl spdy;
-    listen [::]:443 ssl spdy;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     # resolver 8.8.8.8 8.8.4.4 valid=300s;
     # resolver_timeout 5s;
 
@@ -54,8 +54,8 @@ server {
 #
 server {
     server_name smockle.com;
-    listen 443 ssl spdy;
-    listen [::]:443 ssl spdy;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     # resolver 8.8.8.8 8.8.4.4 valid=300s;
     # resolver_timeout 5s;
 

@@ -16,8 +16,8 @@ server {
 server {
     server_name blog.smockle.com;
 
-    listen 443 ssl spdy;
-    listen [::]:443 ssl spdy;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     resolver 8.8.8.8 8.8.4.4;
 
     ssl_certificate /etc/nginx/ssl/blog.smockle.com.chain.crt;
