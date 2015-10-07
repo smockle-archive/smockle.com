@@ -1,0 +1,19 @@
+{
+  "name": "smockle.com",
+  "version": "1.0.0",
+  "description": "Clay Miller (Smockle) collection of web properties https://smockle.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "nginx -t -c $(pwd)/nginx/nginx.conf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smockle/smockle.com.git"
+  },
+  "author": "Clay Miller <clay@smockle.com> (http://www.smockle.com)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/smockle/smockle.com/issues"
+  },
+  "homepage": "https://github.com/smockle/smockle.com#readme"
+}

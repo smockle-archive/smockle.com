@@ -1,3 +1,3 @@
-# smockle-containers
+# smockle.com
 
-Smockle web properties.
+Clay Miller (Smockle) collection of web properties https://smockle.com
