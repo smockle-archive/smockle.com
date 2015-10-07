@@ -12,3 +12,4 @@ cache:
   - node_modules
 before_install:
 - npm install -g npm@3.3.5
+- apt-get install nginx
