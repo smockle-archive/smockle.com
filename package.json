@@ -4,7 +4,7 @@
   "description": "Clay Miller (Smockle) collection of web properties https://smockle.com",
   "main": "index.js",
   "scripts": {
-    "test": "sudo nginx -t -c $(pwd)/nginx/nginx.conf -g \"user: root;\""
+    "test": "sudo nginx -t -c $(pwd)/nginx/nginx.conf -g \"user root;\""
   },
   "repository": {
     "type": "git",
