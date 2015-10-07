@@ -94,7 +94,7 @@ server {
       access_log off;
     }
 
-    location ~ /((?!\.(css|js|xml|txt|jpg|jpeg|gif|png|ico|gz|svg|svgz|ttf|otf|woff|woff2|eot|mp4|ogg|ogv|webm)).)*$ {
+    location / {
       root /var/www/static;
       rewrite ^ /index.html break;
     }
