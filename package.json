@@ -4,7 +4,7 @@
   "description": "Clay Miller (Smockle) collection of web properties https://smockle.com",
   "main": "index.js",
   "scripts": {
-    "test": "/usr/bin/env nginx -t -c $(pwd)/nginx/nginx.conf"
+    "test": "touch $(pwd)/foo.pid && nginx -t -c $(pwd)/nginx/nginx.conf -g \"pid $(pwd)/foo.pid;\""
   },
   "repository": {
     "type": "git",
