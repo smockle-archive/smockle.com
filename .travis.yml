@@ -1,6 +1,7 @@
 language: node_js
 node_js:
 - '4.1'
+sudo: required
 notifications:
   email:
     recipients:
@@ -8,8 +9,9 @@ notifications:
     on_success: change
     on_failure: always
 cache:
+  apt: true
   directories:
   - node_modules
 before_install:
 - npm install -g npm@3.3.5
-- apt-get install nginx
+- sudo apt-get install nginx
