@@ -1,6 +1,3 @@
-[submodule "nginx/server"]
-	path = nginx/server
-	url = https://github.com/smockle/smockle-nginx.git
 [submodule "www/app"]
 	path = www/app
 	url = https://github.com/smockle/www.smockle.com.git
