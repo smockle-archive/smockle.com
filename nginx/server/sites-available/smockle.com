@@ -88,7 +88,7 @@ server {
 
     expires 1M;
 
-    location ~ /.*(\.(css|js|xml|txt|jpg|jpeg|gif|png|ico|gz|svg|svgz|ttf|otf|woff|woff2|eot|mp4|ogg|ogv|webm))$ {
+    location ~ /.*(\.(css|js|xml|txt|jpg|jpeg|gif|png|webp|jpf|ico|gz|svg|svgz|ttf|otf|woff|woff2|eot|mp4|ogg|ogv|webm))$ {
       expires max;
       root /var/www/static;
       access_log off;
