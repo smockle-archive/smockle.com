@@ -4,8 +4,6 @@ node_js:
 sudo: required
 notifications:
   email:
-    recipients:
-    - clay@smockle.com
     on_success: change
     on_failure: always
 cache:
