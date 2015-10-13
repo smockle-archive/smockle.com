@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '4.1'
+- '4.2.1'
 sudo: required
 notifications:
   email:
@@ -15,7 +15,7 @@ addons:
     packages:
     - nginx
 before_install:
-- npm install -g npm@3.3.5
+- npm install -g npm@3.3.6
 before_script:
 - sudo useradd nginx
 script: sudo nginx -t -c $(pwd)/nginx/nginx.conf

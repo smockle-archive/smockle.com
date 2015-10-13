@@ -1,4 +1,4 @@
-FROM node:4.1.1
+FROM node:4.2.1
 
 MAINTAINER Clay Miller "clay@smockle.com"
 
@@ -6,8 +6,8 @@ MAINTAINER Clay Miller "clay@smockle.com"
 RUN mkdir -p /usr/local/src/www /var/www/static /tmp
 WORKDIR /usr/local/src/www
 
-# Update to npm 3.3.5
-RUN npm i -g npm@3.3.5
+# Update to npm 3.3.6
+RUN npm i -g npm@3.3.6
 
 # Install node modules
 ADD app/package.json /tmp/package.json
