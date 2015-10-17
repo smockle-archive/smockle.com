@@ -46,16 +46,17 @@ server {
     expires 1M;
 
     location / {
-      proxy_pass https://medium.com/@smockle;
-
-      proxy_set_header X-Real-IP         $remote_addr;
-      proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
-      proxy_set_header Host              $http_host;
-      proxy_set_header X-Forwarded-Proto $scheme;
-      proxy_set_header X-NginX-Proxy     true;
-
-      proxy_pass_header X-CSRF-TOKEN;
-      proxy_buffering off;
-      proxy_redirect off;
+      return 301 https://medium.com/@smockle$request_uri;
+      # proxy_pass https://medium.com/@smockle;
+      #
+      # proxy_set_header X-Real-IP         $remote_addr;
+      # proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+      # proxy_set_header Host              $http_host;
+      # proxy_set_header X-Forwarded-Proto $scheme;
+      # proxy_set_header X-NginX-Proxy     true;
+      #
+      # proxy_pass_header X-CSRF-TOKEN;
+      # proxy_buffering off;
+      # proxy_redirect off;
     }
 }
