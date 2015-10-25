@@ -33,7 +33,7 @@ server {
 
     # With Content Security Policy (CSP) enabled  you can tell the browser that it
     # can only download content from the domains you explicitly allow
-    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; object-src 'none'";
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; style-src 'self'; font-src 'self'; object-src 'none'";
 
     return 301 https://smockle.com$request_uri;
 }
@@ -84,7 +84,7 @@ server {
 
     # With Content Security Policy (CSP) enabled  you can tell the browser that it
     # can only download content from the domains you explicitly allow
-    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; object-src 'none'";
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; style-src 'self'; font-src 'self'; object-src 'none'";
 
     expires 1M;
 
